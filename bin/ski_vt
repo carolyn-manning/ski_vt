@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+require './lib/ski_vt'
+
+#CLI.welcome 
+#CLI.call 
+#CLI.run(call)
+
+

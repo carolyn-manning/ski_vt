@@ -1,8 +1,14 @@
 #!/usr/bin/env ruby
-require './lib/ski_vt'
 
-#CLI.welcome 
-#CLI.call 
-#CLI.run(call)
+require_relative '../lib/ski_vt/snow_report.rb'
+require_relative '../lib/ski_vt/scraper.rb'
+require_relative '../lib/ski_vt/cli.rb'
+
+today = Cli.new
+today.welcome
+input = today.call 
+today.choose_mountain
+
+
 
 

@@ -38,8 +38,7 @@ class Scraper
             new_report.report_link = report_link 
             new_report.tickets_link = tickets_link 
         end
+      
     end
 
 end 
-
-Scraper.new.scrape_page

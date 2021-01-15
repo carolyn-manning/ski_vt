@@ -6,8 +6,8 @@ require_relative '../lib/ski_vt/cli.rb'
 
 today = Cli.new
 today.welcome
-input = today.call 
-today.choose_mountain
+today.call 
+
 
 
 

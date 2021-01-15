@@ -23,7 +23,7 @@ class Scraper
             two_day_snow = resort.css(".hr_48 .cond_info_value").text
             report_link = resort.css(".cond_buttons :first-child").attribute("href").value if resort.css(".cond_buttons :first-child").attribute("href") != nil
             tickets_link = resort.css(".cond_buttons :nth-child(3)").attribute("href").value if resort.css(".cond_buttons :nth-child(3)").attribute("href") != nil 
-
+        
             new_report = SnowReport.new
             new_report.mountain = mountain
             new_report.last_update = last_update 

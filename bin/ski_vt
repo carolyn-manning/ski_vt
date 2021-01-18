@@ -1,10 +1,8 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/ski_vt/snow_report.rb'
-require_relative '../lib/ski_vt/scraper.rb'
-require_relative '../lib/ski_vt/cli.rb'
+require_relative "../lib/ski_vt.rb"
 
-today = Cli.new
+today = SkiVt::Cli.new
 today.welcome
 today.call 
 

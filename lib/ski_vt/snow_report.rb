@@ -1,8 +1,17 @@
-#!/usr/bin/env ruby
+class SkiVt::SnowReport
 
-class SnowReport
-
-    attr_accessor :last_update, :lifts_open, :trails_open, :surface, :status, :last_snow, :base, :day_snow, :two_day_snow, :report_link, :tickets_link, :mountain
+    attr_accessor :last_update,  
+        :lifts_open,
+        :trails_open,
+        :surface,
+        :status,
+        :last_snow,
+        :base,
+        :day_snow,
+        :two_day_snow,
+        :report_link,
+        :tickets_link,
+        :mountain
 
     @@all = []
 
@@ -27,13 +36,15 @@ class SnowReport
     end
 
     def self.list_open_mts
-       self.open_mts.each_with_index {|snow_report, i| puts "#{i + 1}. #{snow_report.mountain}"}
-    end 
+       self.open_mts.each_with_index do |snow_report, i| 
+            puts "#{i + 1}. #{snow_report.mountain}"
+       end 
+    end
 
     def print_report
         puts "Today's snow report for #{self.mountain} is below."
         puts "Trails Open: #{self.trails_open}"
-        puts "Lifts Open: #{self.lifts_open} "
+        puts "Lifts Open: #{self.lifts_open}" 
         puts "Surface: #{self.surface}"
         puts "Base: #{self.base}"
         puts ""
@@ -41,13 +52,12 @@ class SnowReport
         puts ""
         puts "24 HR #{self.day_snow}"
         puts "48 HR #{self.two_day_snow}"
-        puts "This report was #{self.last_update}. For the full snow report, click below!" 
-        puts "#{self.report_link}"
+        puts "This report was #{self.last_update}."
+        puts "For the full snow report, click below!" unless self.report_link.empty?
+        puts "#{self.report_link}" unless self.report_link.empty?
         puts ""
         puts "To buy tickets, click the link below."
         puts "#{self.tickets_link}"
     end 
-
-
 end 
 

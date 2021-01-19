@@ -1,9 +1,11 @@
 class SkiVt::Cli 
 
     def welcome
+        puts ""
         puts  "Hello! Welcome to the Ski VT gem."
         SkiVt::Scraper.new.scrape_page
-        puts "Choose a mountain for today's snow report (Type the corresponsing number)" 
+        puts ""
+        puts "Choose a mountain by typing the corresponding number from the menu below for today's snow report." 
         SkiVt::SnowReport.list_open_mts
     end
 
@@ -13,7 +15,7 @@ class SkiVt::Cli
 
     def print_input_report(input)
         SkiVt::SnowReport.open_mts[input.to_i - 1].print_report 
-        puts "To view another report, select another number. To view the menu type list. To exit type exit"
+        puts "To view another report, select another number. To view the menu, type list. To exit, type exit."
     end
 
     def call
@@ -21,7 +23,7 @@ class SkiVt::Cli
         if input == "exit"
             puts "See you next time! "
         elsif input == "list"
-            puts "Choose a mountain for today's snow report (Type the corresponsing number)" 
+            puts "Choose a mountain by typing the corresponding number from the menu below for today's snow report."  
             SkiVt::SnowReport.list_open_mts
             self.call 
         elsif self.valid_entry?(input) 

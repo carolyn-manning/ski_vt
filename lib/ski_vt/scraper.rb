@@ -21,13 +21,15 @@ class SkiVt::Scraper
     end
 
     private
-    
+
     def mountain(resort)
         resort.css(".name").text
     end
 
     def last_update(resort)
-         resort.css(".cond_info > :first-child").text
+        update = resort.css(".cond_info > :first-child").text
+        update[0] = update[0].downcase
+        update
     end
 
     def trails_open(resort)

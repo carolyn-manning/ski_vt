@@ -42,22 +42,29 @@ class SkiVt::SnowReport
     end
 
     def print_report
+        puts ""
         puts "Today's snow report for #{self.mountain} is below."
+        puts ""
+        puts "Lift and Terrain Status"
+        puts "-----------------------------"
         puts "Trails Open: #{self.trails_open}"
         puts "Lifts Open: #{self.lifts_open}" 
         puts "Surface: #{self.surface}"
         puts "Base: #{self.base}"
         puts ""
         puts "Snowfall"
+        puts "-----------------------------"
+        puts "24 HR: #{self.day_snow}"
+        puts "48 HR: #{self.two_day_snow}"
         puts ""
-        puts "24 HR #{self.day_snow}"
-        puts "48 HR #{self.two_day_snow}"
         puts "This report was #{self.last_update}."
         puts "For the full snow report, click below!" unless self.report_link.empty?
         puts "#{self.report_link}" unless self.report_link.empty?
         puts ""
         puts "To buy tickets, click the link below."
         puts "#{self.tickets_link}"
+        puts ""
+        puts ""
     end 
 end 
 
